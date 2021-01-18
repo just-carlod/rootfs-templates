@@ -31,6 +31,14 @@ actions:
     packages:
       - hybris-mobian-apt-config
       - hybris-mobian-archive-keyring
+  - action: run
+    description: Set up repo
+    chroot: true
+    script: scripts/setup-repo.sh
+  - action: run
+    chroot: true
+    description: update apt
+    command: apt update
 
   - action: apt
     chroot: true
@@ -48,10 +56,17 @@ actions:
     description: Set up default user
     chroot: true
     script: scripts/setup-user.sh {{ $username }} {{ $password }}
+  - action: run
+    description: Enable modem
+    chroot: true
+    script: scripts/enable-modem.sh
+  
+  - action: run
+    description: Enable modem
+    chroot: true
+    script: scripts/user-preferences.sh
 
   - action: run
     description: Set up system
     chroot: true
     script: scripts/setup-system.sh {{ $hostname }}
-
-
