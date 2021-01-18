@@ -15,3 +15,19 @@ actions:
     packages:
       - adaptation-hybris-api28-phone
       - hybris-mobian-phone
+      - audiosystem-passthrough 
+      - pulseaudio-modules-droid-hidl 
+      - gnome-calls 
+      - callaudiod 
+      - libcallaudio-0-0 
+      - qtwayland5
+      - libcallaudio-tools
+  - action: apt
+    chroot: true
+    description: install additional-packages
+    packages:
+      - gnome-terminal
+      - grim
+      - libnotify-bin
+      - gnome-2048
+      - telegram-desktop
