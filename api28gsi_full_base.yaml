@@ -60,7 +60,7 @@ actions:
     description: Enable modem
     chroot: true
     script: scripts/enable-modem.sh
-  
+
   - action: run
     description: Enable modem
     chroot: true
